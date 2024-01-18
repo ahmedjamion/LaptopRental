@@ -38,7 +38,7 @@ $user_id = isset($_SESSION["user_id"]) ? $_SESSION["user_id"] : null;
             <h3 class="mb-0">Lorem Ipsum Laptop Rental</h3>
             <div class="dropdown">
                 <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <?php echo htmlspecialchars($_SESSION["username"]); ?>
+                    <?php echo htmlspecialchars($_SESSION["first_name"]); ?>
                 </a>
                 <ul class="dropdown-menu bg-light shadow">
                     <li><a class="dropdown-item" href="changepassword.php">Change Password</a></li>

@@ -21,8 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate new password
     if (empty(trim($_POST["new_password"]))) {
         $new_password_err = "Please enter the new password.";
-    } elseif (strlen(trim($_POST["new_password"])) < 6) {
-        $new_password_err = "Password must have atleast 6 characters.";
+    } elseif (strlen(trim($_POST["new_password"])) < 5) {
+        $new_password_err = "Password must have atleast 5 characters.";
     } else {
         $new_password = trim($_POST["new_password"]);
     }
@@ -42,16 +42,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Prepare an update statement
         $sql = "UPDATE user_account SET password = ? WHERE user_id = ?";
 
-        if ($stmt = mysqli_prepare($link, $sql)) {
+        if ($stmt = $mysqli->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "si", $param_password, $param_user_id);
+            $stmt->bind_param("si", $param_password, $param_user_id);
 
             // Set parameters
             $param_password = password_hash($new_password, PASSWORD_DEFAULT);
             $param_user_id = $_SESSION["user_id"];
 
             // Attempt to execute the prepared statement
-            if (mysqli_stmt_execute($stmt)) {
+            if ($stmt->execute()) {
                 // Password updated successfully. Destroy the session, and redirect to login page
                 session_destroy();
                 header("location: login.php");
@@ -61,12 +61,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             // Close statement
-            mysqli_stmt_close($stmt);
+            $stmt->close();
         }
     }
 
     // Close connection
-    mysqli_close($link);
+    $mysqli->close();
 }
 ?>
 

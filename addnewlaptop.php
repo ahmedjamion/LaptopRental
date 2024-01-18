@@ -87,17 +87,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h2 class="">New Laptop Record</h2>
                     <p>Please fill this form and submit to add employee record to the database.</p>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <label>Brand</label>
                             <input type="text" name="brand" class="form-control <?php echo (!empty($brand_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $brand; ?>">
                             <span class="invalid-feedback"><?php echo $brand_err; ?></span>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <label>Model</label>
                             <input type="text" name="model" class="form-control <?php echo (!empty($model_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $model; ?>">
                             <span class="invalid-feedback"><?php echo $model_err; ?></span>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <label>Daily Rental Fee</label>
                             <input type="text" name="rental_fee" class="form-control <?php echo (!empty($rental_fee_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $rental_fee; ?>">
                             <span class="invalid-feedback"><?php echo $rental_fee_err; ?></span>

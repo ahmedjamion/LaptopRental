@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2024 at 04:48 PM
+-- Generation Time: Jan 18, 2024 at 07:48 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -39,10 +39,17 @@ CREATE TABLE `laptop` (
 --
 
 INSERT INTO `laptop` (`laptop_id`, `brand`, `model`, `rental_fee`) VALUES
-(6, 'Asus', 'TUFF', 380.00),
-(7, 'HP', 'Omen', 380.00),
-(8, 'Lenovo', 'Legion', 360.00),
-(9, 'Acer', 'Aspire', 180.00);
+(1, 'Apple', 'MacBook Pro', 300.00),
+(2, 'Apple', 'MacBook Air', 280.00),
+(3, 'Dell', 'XPS 13', 250.00),
+(4, 'HP', 'Spectre x360', 280.00),
+(5, 'Lenovo', 'ThinkPad X1 Carbon', 270.00),
+(6, 'Asus', 'ZenBook', 260.00),
+(7, 'Acer', 'Swift 3', 230.00),
+(8, 'Microsoft', 'Surface Laptop', 320.00),
+(9, 'Samsung', 'Galaxy Book', 270.00),
+(10, 'LG', 'Gram', 240.00),
+(11, 'Sony', 'VAIO', 280.00);
 
 -- --------------------------------------------------------
 
@@ -64,20 +71,7 @@ CREATE TABLE `rental` (
 --
 
 INSERT INTO `rental` (`rental_id`, `user_id`, `laptop_id`, `date_from`, `date_to`, `is_returned`) VALUES
-(68, 8, 6, '2024-01-05', '2024-01-13', 1),
-(69, 8, 7, '2024-01-05', '2024-01-22', 1),
-(70, 8, 8, '2024-01-13', '2024-01-29', 1),
-(71, 8, 9, '2024-01-12', '2024-02-09', 1),
-(72, 8, 6, '2024-01-05', '2024-01-13', 1),
-(73, 9, 7, '2024-01-19', '2024-01-23', 1),
-(74, 8, 8, '2024-01-11', '2024-01-13', 1),
-(75, 9, 6, '2024-01-08', '2024-01-18', 1),
-(76, 8, 8, '2024-01-12', '2024-01-30', 1),
-(77, 8, 7, '2024-01-07', '2024-01-22', 1),
-(78, 8, 6, '2024-01-08', '2024-01-17', 1),
-(79, 8, 8, '2024-01-18', '2024-01-20', 1),
-(80, 8, 7, '2024-01-09', '2024-01-31', 1),
-(81, 8, 8, '2024-01-13', '2024-01-14', 1);
+(1, 2, 1, '2024-01-19', '2024-01-21', 0);
 
 -- --------------------------------------------------------
 
@@ -99,9 +93,8 @@ CREATE TABLE `user_account` (
 --
 
 INSERT INTO `user_account` (`user_id`, `first_name`, `last_name`, `username`, `password`, `user_type`) VALUES
-(2, 'Jane', 'Doe', 'admin', '$2y$10$VqX3npPPCfaXzG6q4a6hleyYcLglscdaszmbcwtklfEaBOv33fI7W', 'Admin'),
-(8, 'Ahmed Rashad', 'Jamion', 'jamionahmed', '$2y$10$2oLgnoz2Am1h9GSFF9ociOr2VmrBw6s38koGyvUCEDkpfC.Ol0OQS', 'Customer'),
-(9, 'ahmed', 'jamion', 'ahmed', '$2y$10$LQAWQnYAwJSDEr2HF8u9ou3Zk0rM3T/aN2/Op1yw2ulzimURPwZMK', 'Customer');
+(1, 'Jane', 'Doe', 'Admin', '$2y$10$/Hc1..GnCoLbFRCkey9XHOErXrQwSnPqfZNaa3TKAvt5vlLxL4ojy', 'Admin'),
+(2, 'John', 'Doe', 'johndoe', '$2y$10$1wDfo0i6cxEcgl4HG5okHeybfUi.sg4eebe1xSglm2l3K0zy8.tFq', 'Customer');
 
 --
 -- Indexes for dumped tables
@@ -136,19 +129,19 @@ ALTER TABLE `user_account`
 -- AUTO_INCREMENT for table `laptop`
 --
 ALTER TABLE `laptop`
-  MODIFY `laptop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `laptop_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `rental`
 --
 ALTER TABLE `rental`
-  MODIFY `rental_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `rental_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user_account`
 --
 ALTER TABLE `user_account`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
