@@ -8,3 +8,11 @@ Instructions
 7. In your browser go to localhost/laptoprental
 8. If you renamed the project folder you should use that
     for example: localhost/nameoffolder
+
+admin account
+    username: admin
+    password: admin
+
+user account
+    username: johndoe
+    password: 12345
