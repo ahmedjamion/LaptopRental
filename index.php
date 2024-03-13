@@ -1,4 +1,18 @@
 <?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "laptop_rental_db";
+
+// Check if database creation script should be run
+$result = (new mysqli($servername, $username, $password))->query("SHOW DATABASES LIKE '$dbname'");
+if ($result->num_rows == 0) {
+    // Database does not exist, so include database creation script
+    include 'db.php';
+}
+
+
 // Initialize the session
 session_start();
 

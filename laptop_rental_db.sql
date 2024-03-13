@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2024 at 07:48 AM
+-- Generation Time: Mar 13, 2024 at 02:59 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -71,7 +71,7 @@ CREATE TABLE `rental` (
 --
 
 INSERT INTO `rental` (`rental_id`, `user_id`, `laptop_id`, `date_from`, `date_to`, `is_returned`) VALUES
-(1, 2, 1, '2024-01-19', '2024-01-21', 0);
+(1, 2, 1, '2024-01-19', '2024-01-21', 1);
 
 -- --------------------------------------------------------
 

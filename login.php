@@ -111,7 +111,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="col-4 border rounded rounded-3 bg-light p-3">
                     <h2>Login</h2>
                     <p>Please fill in your credentials to login.</p>
-
+                    <p>Admin: username = "admin" password = "admin"</p>
+                    <p>User: username = "johndoe" password = "12345"</p>
                     <?php
                     if (!empty($login_err)) {
                         echo '<div class="alert alert-danger">' . $login_err . '</div>';
